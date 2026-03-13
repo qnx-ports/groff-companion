@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=groff
 pkgver=1.23.0
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="GNU troff text-formatting system"
 url="https://www.gnu.org/software/groff/groff.html"
 arch="all"
@@ -44,6 +44,7 @@ package() {
         "$pkgdir"/usr/share/man/man7/roff.7
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 eff473fd1d0e6b27527318452ef2b7c6c7aba0b1c27fc529036496eccba5717f3639df0b81a297a57f700e27543196d7086b15e43d7e3c7bf075f95feb7f4089  groff-1.23.0.tar.gz
 "
